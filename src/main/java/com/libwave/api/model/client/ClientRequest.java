@@ -22,56 +22,56 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.libwave.api.model.desktop;
+package com.libwave.api.model.client;
 
-import com.libwave.api.model.common.BaseModelObject;
+import java.io.Serializable;
+import java.util.Date;
 
 @SuppressWarnings("serial")
-public class GetClientRequestsResponse extends BaseModelObject {
+public abstract class ClientRequest implements Serializable {
 
-	public static enum RequestType {
-		SEARCH, DOWNLOAD
+	protected String uuid;
+
+	protected String clientUuid;
+
+	protected String desktopUuid;
+
+	protected Date date = new Date();
+
+	public Date getDate() {
+		return date;
 	}
 
-	private String clientRequestUuid;
+	public abstract String getCommand();
 
-	private RequestType requestType;
-
-	private String requestData;
-
-	public String getClientRequestUuid() {
-		return clientRequestUuid;
+	public String getUuid() {
+		return uuid;
 	}
 
-	public void setClientRequestUuid(String clientRequestUuid) {
-		this.clientRequestUuid = clientRequestUuid;
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 
-	public RequestType getRequestType() {
-		return requestType;
+	public String getClientUuid() {
+		return clientUuid;
 	}
 
-	public void setRequestType(RequestType requestType) {
-		this.requestType = requestType;
+	public void setClientUuid(String clientUuid) {
+		this.clientUuid = clientUuid;
 	}
 
-	public String getRequestData() {
-		return requestData;
+	public String getDesktopUuid() {
+		return desktopUuid;
 	}
 
-	public void setRequestData(String requestData) {
-		this.requestData = requestData;
+	public void setDesktopUuid(String desktopUuid) {
+		this.desktopUuid = desktopUuid;
 	}
 
 	@Override
 	public String toString() {
-		return "GetClientRequestsResponse [clientRequestUuid=" + clientRequestUuid + ", requestType=" + requestType
-				+ ", requestData=" + requestData + "]";
-	}
-
-	@Override
-	public String getType() {
-		return "get-client-requests";
+		return "ClientRequest [uuid=" + uuid + ", clientUuid=" + clientUuid + ", desktopUuid=" + desktopUuid + ", date="
+				+ date + "]";
 	}
 
 }

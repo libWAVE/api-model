@@ -22,56 +22,24 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.libwave.api.model.desktop;
-
-import com.libwave.api.model.common.BaseModelObject;
+package com.libwave.api.model.client;
 
 @SuppressWarnings("serial")
-public class GetClientRequestsResponse extends BaseModelObject {
+public class SearchClientRequest extends ClientRequest {
 
-	public static enum RequestType {
-		SEARCH, DOWNLOAD
+	private String query;
+
+	public String getQuery() {
+		return query;
 	}
 
-	private String clientRequestUuid;
-
-	private RequestType requestType;
-
-	private String requestData;
-
-	public String getClientRequestUuid() {
-		return clientRequestUuid;
-	}
-
-	public void setClientRequestUuid(String clientRequestUuid) {
-		this.clientRequestUuid = clientRequestUuid;
-	}
-
-	public RequestType getRequestType() {
-		return requestType;
-	}
-
-	public void setRequestType(RequestType requestType) {
-		this.requestType = requestType;
-	}
-
-	public String getRequestData() {
-		return requestData;
-	}
-
-	public void setRequestData(String requestData) {
-		this.requestData = requestData;
+	public void setQuery(String query) {
+		this.query = query;
 	}
 
 	@Override
-	public String toString() {
-		return "GetClientRequestsResponse [clientRequestUuid=" + clientRequestUuid + ", requestType=" + requestType
-				+ ", requestData=" + requestData + "]";
-	}
-
-	@Override
-	public String getType() {
-		return "get-client-requests";
+	public String getCommand() {
+		return "search-request";
 	}
 
 }

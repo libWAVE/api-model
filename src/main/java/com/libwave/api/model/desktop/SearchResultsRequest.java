@@ -24,20 +24,24 @@ SOFTWARE.
 */
 package com.libwave.api.model.desktop;
 
-import com.libwave.api.model.common.BaseModelObject;
+import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class GetClientRequestsResponse extends BaseModelObject {
+public class SearchResultsRequest implements Serializable {
 
-	public static enum RequestType {
-		SEARCH, DOWNLOAD
-	}
+	private String uuid;
+
+	private String fileName;
+
+	private String title;
+
+	private String artist;
+
+	private String album;
+
+	private String genre;
 
 	private String clientRequestUuid;
-
-	private RequestType requestType;
-
-	private String requestData;
 
 	public String getClientRequestUuid() {
 		return clientRequestUuid;
@@ -47,31 +51,58 @@ public class GetClientRequestsResponse extends BaseModelObject {
 		this.clientRequestUuid = clientRequestUuid;
 	}
 
-	public RequestType getRequestType() {
-		return requestType;
+	public String getUuid() {
+		return uuid;
 	}
 
-	public void setRequestType(RequestType requestType) {
-		this.requestType = requestType;
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 
-	public String getRequestData() {
-		return requestData;
+	public String getFileName() {
+		return fileName;
 	}
 
-	public void setRequestData(String requestData) {
-		this.requestData = requestData;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+
+	public String getAlbum() {
+		return album;
+	}
+
+	public void setAlbum(String album) {
+		this.album = album;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 	@Override
 	public String toString() {
-		return "GetClientRequestsResponse [clientRequestUuid=" + clientRequestUuid + ", requestType=" + requestType
-				+ ", requestData=" + requestData + "]";
-	}
-
-	@Override
-	public String getType() {
-		return "get-client-requests";
+		return "SearchResultsRequest [uuid=" + uuid + ", fileName=" + fileName + ", title=" + title + ", artist="
+				+ artist + ", album=" + album + ", genre=" + genre + ", clientRequestUuid=" + clientRequestUuid + "]";
 	}
 
 }
