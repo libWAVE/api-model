@@ -27,12 +27,12 @@ package com.libwave.api;
 public interface Urls {
 
 	// Desktop
-	public static final String DESKTOP_GET_CLIENT_REQUESTS = "/api/desktop/requests/get/{dektopUuid}";
+	public static final String DESKTOP_GET_CLIENT_REQUESTS = "/api/desktop/requests/get/{desktopUuid}";
 	public static final String DESKTOP_UPLOAD_FILE = "/api/desktop/upload/{requestUuid}";
 	public static final String DESKTOP_SEND_SEARCH_RESULTS = "/api/desktop/search/submit";
 
 	// Client
-	public static final String CLIENT_CHECK_DESKTOP_STATUS = "/api/client/request/desktop/status/{dektopUuid}";
+	public static final String CLIENT_CHECK_DESKTOP_STATUS = "/api/client/request/desktop/status/{desktopUuid}";
 	public static final String CLIENT_SUBMIT_REQUEST = "/api/client/request/submit";
 	public static final String CLIENT_SUBMIT_SEARCH_REQUEST_POLL = "/api/client/request/search/poll/{requestUuid}";
 
