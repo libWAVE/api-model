@@ -22,21 +22,76 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.libwave.api.model.desktop;
+package com.libwave.api.model.common;
 
 import java.io.Serializable;
 
-@SuppressWarnings("serial")
-public class GetClientRequestsRequest implements Serializable {
+public class Track implements Serializable {
 
-	private String desktopUuid;
+	private String uuid;
 
-	public String getDesktopUuid() {
-		return desktopUuid;
+	private String fileName;
+
+	private String title;
+
+	private String artist;
+
+	private String album;
+
+	private String genre;
+
+	@Override
+	public String toString() {
+		return "Track [uuid=" + uuid + ", fileName=" + fileName + ", title=" + title + ", artist=" + artist + ", album="
+				+ album + ", genre=" + genre + "]";
 	}
 
-	public void setDesktopUuid(String desktopUuid) {
-		this.desktopUuid = desktopUuid;
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+
+	public String getAlbum() {
+		return album;
+	}
+
+	public void setAlbum(String album) {
+		this.album = album;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 }

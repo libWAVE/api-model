@@ -25,84 +25,36 @@ SOFTWARE.
 package com.libwave.api.model.desktop;
 
 import java.io.Serializable;
+import java.util.List;
+
+import com.libwave.api.model.common.Track;
 
 @SuppressWarnings("serial")
 public class SearchResultsRequest implements Serializable {
 
-	private String uuid;
+	private List<Track> tracks;
 
-	private String fileName;
+	private String requestUuid;
 
-	private String title;
-
-	private String artist;
-
-	private String album;
-
-	private String genre;
-
-	private String clientRequestUuid;
-
-	public String getClientRequestUuid() {
-		return clientRequestUuid;
+	public List<Track> getTracks() {
+		return tracks;
 	}
 
-	public void setClientRequestUuid(String clientRequestUuid) {
-		this.clientRequestUuid = clientRequestUuid;
+	public void setTracks(List<Track> tracks) {
+		this.tracks = tracks;
 	}
 
-	public String getUuid() {
-		return uuid;
+	public String getRequestUuid() {
+		return requestUuid;
 	}
 
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
-
-	public String getFileName() {
-		return fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getArtist() {
-		return artist;
-	}
-
-	public void setArtist(String artist) {
-		this.artist = artist;
-	}
-
-	public String getAlbum() {
-		return album;
-	}
-
-	public void setAlbum(String album) {
-		this.album = album;
-	}
-
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
+	public void setRequestUuid(String requestUuid) {
+		this.requestUuid = requestUuid;
 	}
 
 	@Override
 	public String toString() {
-		return "SearchResultsRequest [uuid=" + uuid + ", fileName=" + fileName + ", title=" + title + ", artist="
-				+ artist + ", album=" + album + ", genre=" + genre + ", clientRequestUuid=" + clientRequestUuid + "]";
+		return "SearchResultsRequest [tracks=" + tracks + ", requestUuid=" + requestUuid + "]";
 	}
 
 }

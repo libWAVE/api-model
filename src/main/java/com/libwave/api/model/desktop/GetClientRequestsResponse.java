@@ -24,49 +24,20 @@ SOFTWARE.
 */
 package com.libwave.api.model.desktop;
 
+import com.libwave.api.model.client.ClientRequest;
 import com.libwave.api.model.common.BaseModelObject;
 
 @SuppressWarnings("serial")
 public class GetClientRequestsResponse extends BaseModelObject {
 
-	public static enum RequestType {
-		SEARCH, DOWNLOAD
+	private ClientRequest request;
+
+	public ClientRequest getRequest() {
+		return request;
 	}
 
-	private String clientRequestUuid;
-
-	private RequestType requestType;
-
-	private String requestData;
-
-	public String getClientRequestUuid() {
-		return clientRequestUuid;
-	}
-
-	public void setClientRequestUuid(String clientRequestUuid) {
-		this.clientRequestUuid = clientRequestUuid;
-	}
-
-	public RequestType getRequestType() {
-		return requestType;
-	}
-
-	public void setRequestType(RequestType requestType) {
-		this.requestType = requestType;
-	}
-
-	public String getRequestData() {
-		return requestData;
-	}
-
-	public void setRequestData(String requestData) {
-		this.requestData = requestData;
-	}
-
-	@Override
-	public String toString() {
-		return "GetClientRequestsResponse [clientRequestUuid=" + clientRequestUuid + ", requestType=" + requestType
-				+ ", requestData=" + requestData + "]";
+	public void setRequest(ClientRequest request) {
+		this.request = request;
 	}
 
 	@Override

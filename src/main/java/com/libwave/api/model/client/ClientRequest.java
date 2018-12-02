@@ -28,7 +28,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 @SuppressWarnings("serial")
-public abstract class ClientRequest implements Serializable {
+public class ClientRequest implements Serializable {
+
+	protected ClientRequestType type;
 
 	protected String uuid;
 
@@ -36,13 +38,29 @@ public abstract class ClientRequest implements Serializable {
 
 	protected String desktopUuid;
 
+	protected String data;
+
 	protected Date date = new Date();
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public ClientRequestType getType() {
+		return type;
+	}
+
+	public void setType(ClientRequestType type) {
+		this.type = type;
+	}
 
 	public Date getDate() {
 		return date;
 	}
-
-	public abstract String getCommand();
 
 	public String getUuid() {
 		return uuid;
@@ -70,8 +88,8 @@ public abstract class ClientRequest implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ClientRequest [uuid=" + uuid + ", clientUuid=" + clientUuid + ", desktopUuid=" + desktopUuid + ", date="
-				+ date + "]";
+		return "ClientRequest [type=" + type + ", uuid=" + uuid + ", clientUuid=" + clientUuid + ", desktopUuid="
+				+ desktopUuid + ", data=" + data + ", date=" + date + "]";
 	}
 
 }
